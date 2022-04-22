@@ -1,9 +1,7 @@
 import express from "express";
 
 import "reflect-metadata";
-import { AppDataSource } from "./data-source";
-
-AppDataSource.initialize();
+import "./database";
 
 const app = express();
 
