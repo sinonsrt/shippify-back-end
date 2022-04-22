@@ -5,8 +5,24 @@ import { Company } from "../../entities/Company";
 class CompaniesRepositoryInMemory implements ICompaniesRepository {
   companies: Company[] = [];
 
-  async create(data: ICreateCompanyDTO): Promise<void> {
-    console.log({ data });
+  async create({
+    name,
+    city,
+    status,
+    plan_type,
+  }: ICreateCompanyDTO): Promise<Company> {
+    const company = new Company();
+
+    Object.assign(company, {
+      name,
+      city,
+      status,
+      plan_type,
+    });
+
+    this.companies.push(company);
+
+    return company;
   }
 }
 

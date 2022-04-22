@@ -1,4 +1,5 @@
 import { ICreateCompanyDTO } from "../dto";
+import { Company } from "../infra/entities/Company";
 import { ICompaniesRepository } from "../interfaces/ICompaniesRepository";
 
 class CreateCompanyUseCase {
@@ -9,13 +10,15 @@ class CreateCompanyUseCase {
     city,
     status,
     plan_type,
-  }: ICreateCompanyDTO): Promise<void> {
-    await this.companiesRepository.create({
+  }: ICreateCompanyDTO): Promise<Company> {
+    const company = await this.companiesRepository.create({
       name,
       city,
       status,
       plan_type,
     });
+
+    return company;
   }
 }
 
