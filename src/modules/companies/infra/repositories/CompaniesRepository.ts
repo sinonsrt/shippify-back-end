@@ -11,8 +11,10 @@ class CompaniesRepository implements ICompaniesRepository {
     this.repository = getRepository(Company);
   }
 
-  list(): Promise<Company[]> {
-    throw new Error("Method not implemented.");
+  async list(): Promise<Company[]> {
+    const companies = await this.repository.find();
+
+    return companies;
   }
 
   async create({
