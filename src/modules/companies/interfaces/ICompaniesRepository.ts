@@ -1,7 +1,7 @@
 import { ICreateCompanyDTO } from "../dto";
 
-interface IDriversRepository {
+interface ICompaniesRepository {
   create(data: ICreateCompanyDTO): Promise<void>;
 }
 
-export { IDriversRepository };
+export { ICompaniesRepository };
