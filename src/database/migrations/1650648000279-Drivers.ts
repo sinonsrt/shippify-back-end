@@ -10,6 +10,7 @@ export class Drivers1650648000279 implements MigrationInterface {
             name: "id",
             type: "integer",
             isGenerated: true,
+            generationStrategy: "increment",
             isPrimary: true,
           },
           {

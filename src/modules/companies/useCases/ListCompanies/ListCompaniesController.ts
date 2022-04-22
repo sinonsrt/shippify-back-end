@@ -1,0 +1,3 @@
+class ListCompaniesController {}
+
+export { ListCompaniesController };

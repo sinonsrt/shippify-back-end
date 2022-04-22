@@ -14,9 +14,9 @@
   "dependencies": {
     "express": "^4.17.3",
     "mysql2": "^2.3.3",
-    "pg": "^8.4.0",
     "reflect-metadata": "^0.1.13",
     "ts-jest": "^27.1.4",
+    "tsyringe": "^4.6.0",
     "typeorm": "^0.2.45",
     "uuid": "^8.3.2"
   },

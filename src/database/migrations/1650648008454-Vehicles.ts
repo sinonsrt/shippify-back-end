@@ -10,6 +10,7 @@ export class Vehicles1650648008454 implements MigrationInterface {
             name: "id",
             type: "integer",
             isGenerated: true,
+            generationStrategy: "increment",
             isPrimary: true,
           },
           {

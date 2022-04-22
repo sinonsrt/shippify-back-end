@@ -5,7 +5,6 @@ import {
   PrimaryColumn,
   PrimaryGeneratedColumn,
 } from "typeorm";
-import { v4 as uuidv4 } from "uuid";
 
 @Entity("companies")
 class Company {
@@ -29,7 +28,6 @@ class Company {
   creation_date: Date;
 
   constructor() {
-    if (!this.id) this.id = uuidv4();
     if (!this.creation_date) this.creation_date = new Date();
   }
 }

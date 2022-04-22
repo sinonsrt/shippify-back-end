@@ -5,6 +5,10 @@ import { Company } from "../../entities/Company";
 class CompaniesRepositoryInMemory implements ICompaniesRepository {
   companies: Company[] = [];
 
+  async list(): Promise<Company[]> {
+    return this.companies;
+  }
+
   async create({
     name,
     city,

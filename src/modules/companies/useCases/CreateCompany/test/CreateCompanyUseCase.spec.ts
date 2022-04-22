@@ -2,10 +2,10 @@ import { CompaniesRepositoryInMemory } from "modules/companies/infra/repositorie
 
 import { CreateCompanyUseCase } from "../CreateCompanyUseCase";
 
-let companiesRepository: CompaniesRepositoryInMemory;
-let createCompanyUseCase: CreateCompanyUseCase;
-
 describe("Create a new Company", () => {
+  let companiesRepository: CompaniesRepositoryInMemory;
+  let createCompanyUseCase: CreateCompanyUseCase;
+
   beforeEach(() => {
     companiesRepository = new CompaniesRepositoryInMemory();
     createCompanyUseCase = new CreateCompanyUseCase(companiesRepository);

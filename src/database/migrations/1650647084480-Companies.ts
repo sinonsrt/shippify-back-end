@@ -10,6 +10,7 @@ export class Companies1650647084480 implements MigrationInterface {
             name: "id",
             type: "integer",
             isGenerated: true,
+            generationStrategy: "increment",
             isPrimary: true,
           },
           {

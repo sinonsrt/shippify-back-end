@@ -1,3 +1,5 @@
+// class-validator
+
 interface ICreateCompanyDTO {
   name: string;
   city: string;

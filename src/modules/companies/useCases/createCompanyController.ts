@@ -1,3 +1,0 @@
-class CreateCompanyController {}
-
-export { CreateCompanyController };
