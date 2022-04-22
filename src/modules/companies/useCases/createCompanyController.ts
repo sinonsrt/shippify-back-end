@@ -1,0 +1,3 @@
+class createCompanyController {}
+
+export { createCompanyController };

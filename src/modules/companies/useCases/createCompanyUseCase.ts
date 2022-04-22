@@ -1,0 +1,3 @@
+class createCompanyUseCase {}
+
+export { createCompanyUseCase };
