@@ -1,3 +1,3 @@
-class createVehicleController {}
+class CreateVehicleController {}
 
-export { createVehicleController };
+export { CreateVehicleController };

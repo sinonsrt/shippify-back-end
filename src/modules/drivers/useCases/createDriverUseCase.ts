@@ -1,3 +1,3 @@
-class createDriverUseCase {}
+class CreateDriverUseCase {}
 
-export { createDriverUseCase };
+export { CreateDriverUseCase };
