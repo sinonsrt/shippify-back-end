@@ -1,35 +1,43 @@
 {
-  "name": "shippify-back-end",
-  "version": "1.0.0",
-  "description": "Back-end API to Shippify",
-  "main": "index.js",
-  "author": "Lucas Marchiori",
-  "license": "MIT",
-  "scripts": {
-    "dev": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn src/server.ts",
-    "test": "jest --runInBand --passWithNoTests --verbose",
-    "test:watch": "jest --watch --runInBand --passWithNoTests --verbose"
-  },
-  "dependencies": {
-    "express": "^4.17.3",
-    "ts-jest": "^27.1.4",
-    "uuid": "^8.3.2"
-  },
-  "devDependencies": {
-    "@types/express": "^4.17.13",
-    "@types/jest": "^27.4.1",
-    "@typescript-eslint/eslint-plugin": "^5.20.0",
-    "@typescript-eslint/parser": "^5.20.0",
-    "eslint": "^8.13.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-import-resolver-typescript": "^2.7.1",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-import-helpers": "^1.2.1",
-    "eslint-plugin-prettier": "^4.0.0",
-    "jest": "^27.5.1",
-    "prettier": "^2.6.2",
-    "ts-node-dev": "^1.1.8",
-    "typescript": "^4.6.3"
-  }
+   "name": "shippify-back-end",
+   "version": "1.0.0",
+   "description": "Back-end API to Shippify",
+   "main": "index.js",
+   "author": "Lucas Marchiori",
+   "license": "MIT",
+   "scripts": {
+      "dev": "ts-node-dev -r tsconfig-paths/register --poll --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
+      "test": "jest --runInBand --passWithNoTests --verbose",
+      "test:watch": "jest --watch --runInBand --passWithNoTests --verbose",
+      "start": "ts-node src/index.ts",
+      "typeorm": "typeorm-ts-node-commonjs"
+   },
+   "dependencies": {
+      "express": "^4.17.3",
+      "mysql": "^2.18.1",
+      "reflect-metadata": "^0.1.13",
+      "ts-jest": "^27.1.4",
+      "typeorm": "0.3.6",
+      "uuid": "^8.3.2",
+      "pg": "^8.4.0"
+   },
+   "devDependencies": {
+      "@types/express": "^4.17.13",
+      "@types/jest": "^27.4.1",
+      "@typescript-eslint/eslint-plugin": "^5.20.0",
+      "@typescript-eslint/parser": "^5.20.0",
+      "eslint": "^8.13.0",
+      "eslint-config-airbnb-base": "^15.0.0",
+      "eslint-config-prettier": "^8.5.0",
+      "eslint-import-resolver-typescript": "^2.7.1",
+      "eslint-plugin-import": "^2.22.1",
+      "eslint-plugin-import-helpers": "^1.2.1",
+      "eslint-plugin-prettier": "^4.0.0",
+      "jest": "^27.5.1",
+      "prettier": "^2.6.2",
+      "ts-node-dev": "^1.1.8",
+      "typescript": "4.5.2",
+      "ts-node": "10.7.0",
+      "@types/node": "^16.11.10"
+   }
 }
