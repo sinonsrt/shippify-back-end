@@ -19,7 +19,9 @@ describe("Create a new Company", () => {
       status: "Status",
     });
 
-    expect(company).toHaveProperty("id");
+    console.log({ company });
+
+    expect(company).toHaveProperty("creation_date");
     expect(typeof company).toBe("object");
   });
 });

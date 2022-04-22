@@ -28,6 +28,12 @@ class CompaniesRepositoryInMemory implements ICompaniesRepository {
 
     return company;
   }
+
+  async findById(id: number): Promise<Company> {
+    const company = this.companies.find((c) => c.id === id);
+
+    return company;
+  }
 }
 
 export { CompaniesRepositoryInMemory };

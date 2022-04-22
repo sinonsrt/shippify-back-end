@@ -10,7 +10,7 @@ import {
 class Company {
   @PrimaryColumn()
   @PrimaryGeneratedColumn()
-  id: string;
+  id: number;
 
   @Column({ unique: true })
   name: string;
