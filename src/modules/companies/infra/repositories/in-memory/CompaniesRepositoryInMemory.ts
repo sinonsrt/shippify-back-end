@@ -56,8 +56,6 @@ class CompaniesRepositoryInMemory implements ICompaniesRepository {
   }
 
   async delete(id: number): Promise<void> {
-    // TODO - Criar fake delete
-
     const company = this.companies.find((c) => c.id === id);
     const index = this.companies.indexOf(company);
     this.companies.splice(index, 1);

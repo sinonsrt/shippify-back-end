@@ -19,7 +19,7 @@ describe("Create a new Company", () => {
       status: "Status",
     });
 
-    expect(company).toHaveProperty("creation_date");
+    expect(company).toHaveProperty("id");
     expect(typeof company).toBe("object");
   });
 });

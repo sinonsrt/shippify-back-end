@@ -1,9 +1,10 @@
-interface ICreateVehicleDTO {
-  driver_id: string;
+interface IVehicleDTO {
+  id?: number;
+  driver_id: number;
   plate: string;
   model: string;
   type: string;
   capacity: string;
 }
 
-export { ICreateVehicleDTO };
+export { IVehicleDTO };
