@@ -1,4 +1,4 @@
-import { ICreateCompanyDTO } from "modules/companies/dto";
+import { ICompanyDTO } from "modules/companies/dto";
 import { ICompaniesRepository } from "modules/companies/interfaces/ICompaniesRepository";
 import { getRepository, Repository } from "typeorm";
 
@@ -28,7 +28,7 @@ class CompaniesRepository implements ICompaniesRepository {
     city,
     status,
     plan_type,
-  }: ICreateCompanyDTO): Promise<Company> {
+  }: ICompanyDTO): Promise<Company> {
     const company = this.repository.create({
       name,
       city,
@@ -37,6 +37,24 @@ class CompaniesRepository implements ICompaniesRepository {
     });
 
     await this.repository.save(company);
+
+    return company;
+  }
+
+  async update({
+    id,
+    name,
+    city,
+    status,
+    plan_type,
+  }: ICompanyDTO): Promise<Company> {
+    const company = await this.repository.save({
+      id,
+      name,
+      city,
+      status,
+      plan_type,
+    });
 
     return company;
   }

@@ -1,10 +1,11 @@
-import { ICreateCompanyDTO } from "../dto";
+import { ICompanyDTO } from "../dto";
 import { Company } from "../infra/entities/Company";
 
 interface ICompaniesRepository {
-  create(data: ICreateCompanyDTO): Promise<Company>;
+  create(data: ICompanyDTO): Promise<Company>;
   list(): Promise<Company[]>;
   findById(id: number): Promise<Company>;
+  update(data: ICompanyDTO): Promise<Company>;
   delete(id: number): Promise<void>;
 }
 

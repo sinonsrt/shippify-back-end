@@ -1,6 +1,6 @@
 import { randomInt } from "crypto";
 
-import { ICreateCompanyDTO } from "../../../dto";
+import { ICompanyDTO } from "../../../dto";
 import { ICompaniesRepository } from "../../../interfaces/ICompaniesRepository";
 import { Company } from "../../entities/Company";
 
@@ -16,7 +16,7 @@ class CompaniesRepositoryInMemory implements ICompaniesRepository {
     city,
     status,
     plan_type,
-  }: ICreateCompanyDTO): Promise<Company> {
+  }: ICompanyDTO): Promise<Company> {
     const company = new Company();
 
     Object.assign(company, {
@@ -34,6 +34,23 @@ class CompaniesRepositoryInMemory implements ICompaniesRepository {
 
   async findById(id: number): Promise<Company> {
     const company = this.companies.find((c) => c.id === id);
+
+    return company;
+  }
+
+  async update({
+    id,
+    name,
+    city,
+    status,
+    plan_type,
+  }: ICompanyDTO): Promise<Company> {
+    const company = this.companies.find((c) => c.id === id);
+
+    company.name = name;
+    company.city = city;
+    company.status = status;
+    company.plan_type = plan_type;
 
     return company;
   }
