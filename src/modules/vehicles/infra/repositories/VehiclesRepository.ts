@@ -38,7 +38,6 @@ class VehiclesRepository implements IVehiclesRepository {
     }
 
     const vehicles = await vehiclesQuery.getMany();
-
     return vehicles;
   }
 
