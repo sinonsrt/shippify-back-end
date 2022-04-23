@@ -30,7 +30,7 @@ class VehiclesRepository implements IVehiclesRepository {
     return vehicle;
   }
 
-  async list(driver_id: number): Promise<Vehicle[]> {
+  async list(driver_id?: number): Promise<Vehicle[]> {
     const vehiclesQuery = await this.repository.createQueryBuilder("v");
 
     if (driver_id) {

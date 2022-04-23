@@ -29,7 +29,7 @@ class VehiclesRepositoryInMemory implements IVehiclesRepository {
     return vehicle;
   }
 
-  async list(driver_id: number): Promise<Vehicle[]> {
+  async list(driver_id?: number): Promise<Vehicle[]> {
     if (driver_id) {
       return this.vehicles.filter((vehicle) => vehicle.driver_id === driver_id);
     }
