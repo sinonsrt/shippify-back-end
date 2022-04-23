@@ -1,3 +1,5 @@
+import { randomInt } from "crypto";
+
 import { ICreateCompanyDTO } from "../../../dto";
 import { ICompaniesRepository } from "../../../interfaces/ICompaniesRepository";
 import { Company } from "../../entities/Company";
@@ -18,6 +20,7 @@ class CompaniesRepositoryInMemory implements ICompaniesRepository {
     const company = new Company();
 
     Object.assign(company, {
+      id: randomInt(10),
       name,
       city,
       status,
@@ -33,6 +36,14 @@ class CompaniesRepositoryInMemory implements ICompaniesRepository {
     const company = this.companies.find((c) => c.id === id);
 
     return company;
+  }
+
+  async delete(id: number): Promise<void> {
+    // TODO - Criar fake delete
+
+    const company = this.companies.find((c) => c.id === id);
+    const index = this.companies.indexOf(company);
+    this.companies.splice(index, 1);
   }
 }
 

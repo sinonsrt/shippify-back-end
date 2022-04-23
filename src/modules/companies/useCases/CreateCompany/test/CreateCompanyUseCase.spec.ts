@@ -19,8 +19,6 @@ describe("Create a new Company", () => {
       status: "Status",
     });
 
-    console.log({ company });
-
     expect(company).toHaveProperty("creation_date");
     expect(typeof company).toBe("object");
   });
