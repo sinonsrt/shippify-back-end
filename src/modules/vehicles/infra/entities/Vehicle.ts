@@ -1,7 +1,10 @@
+import { Driver } from "modules/drivers/infra/entities/Driver";
 import {
   Column,
   CreateDateColumn,
   Entity,
+  JoinColumn,
+  OneToOne,
   PrimaryColumn,
   PrimaryGeneratedColumn,
 } from "typeorm";
@@ -10,9 +13,10 @@ import {
 class Vehicle {
   @PrimaryColumn()
   @PrimaryGeneratedColumn()
-  id?: number;
+  id: number;
 
-  @Column()
+  @OneToOne(() => Driver)
+  @JoinColumn({ name: "driver_id", referencedColumnName: "id" })
   driver_id: number;
 
   @Column()

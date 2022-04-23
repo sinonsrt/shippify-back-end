@@ -2,7 +2,7 @@ import { CompaniesRepositoryInMemory } from "modules/companies/infra/repositorie
 
 import { CreateCompanyUseCase } from "../CreateCompanyUseCase";
 
-describe("Create a new Company", () => {
+describe("Should be able to create a new company", () => {
   let companiesRepository: CompaniesRepositoryInMemory;
   let createCompanyUseCase: CreateCompanyUseCase;
 
@@ -11,7 +11,7 @@ describe("Create a new Company", () => {
     createCompanyUseCase = new CreateCompanyUseCase(companiesRepository);
   });
 
-  it("Should be able to create a new Company", async () => {
+  it("Should be able to create a new company", async () => {
     const company = await createCompanyUseCase.execute({
       name: "Company test",
       city: "Test city",

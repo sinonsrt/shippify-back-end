@@ -2,7 +2,7 @@ import { VehiclesRepositoryInMemory } from "modules/vehicles/infra/repositories/
 
 import { CreateVehicleUseCase } from "../CreateVehicleUseCase";
 
-describe("Should be able to create a vehicle", () => {
+describe("Should be able to create a new vehicle", () => {
   let vehiclesRepository: VehiclesRepositoryInMemory;
   let createVehicleUseCase: CreateVehicleUseCase;
 
@@ -11,7 +11,7 @@ describe("Should be able to create a vehicle", () => {
     createVehicleUseCase = new CreateVehicleUseCase(vehiclesRepository);
   });
 
-  it("Should be able to create a vehicle", async () => {
+  it("Should be able to create a new Vehicle", async () => {
     const vehicle = await createVehicleUseCase.execute({
       driver_id: 1,
       plate: "test plate",

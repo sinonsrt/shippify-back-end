@@ -1,3 +1,0 @@
-class CreateDriverController {}
-
-export { CreateDriverController };

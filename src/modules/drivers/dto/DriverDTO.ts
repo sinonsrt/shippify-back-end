@@ -1,5 +1,6 @@
-interface ICreateDriverDTO {
-  company_id: string;
+interface IDriverDTO {
+  id?: number;
+  company_id: number;
   city: string;
   first_name: string;
   last_name: string;
@@ -9,4 +10,4 @@ interface ICreateDriverDTO {
   status: string;
 }
 
-export { ICreateDriverDTO };
+export { IDriverDTO };

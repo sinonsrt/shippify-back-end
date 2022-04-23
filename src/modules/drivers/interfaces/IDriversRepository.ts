@@ -1,7 +1,9 @@
-import { ICreateDriverDTO } from "../dto";
+import { IDriverDTO } from "../dto";
+import { Driver } from "../infra/entities/Driver";
 
 interface IDriversRepository {
-  create(data: ICreateDriverDTO): Promise<void>;
+  create(data: IDriverDTO): Promise<Driver>;
+  list(): Promise<Driver[]>;
 }
 
 export { IDriversRepository };

@@ -45,7 +45,7 @@ export class Vehicles1650648008454 implements MigrationInterface {
         ],
         foreignKeys: [
           {
-            name: "FKVehicleDriver",
+            name: "FKDriver",
             referencedTableName: "drivers",
             referencedColumnNames: ["id"],
             columnNames: ["driver_id"],
