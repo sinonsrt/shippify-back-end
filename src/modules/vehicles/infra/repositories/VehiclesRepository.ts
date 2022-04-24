@@ -31,13 +31,13 @@ class VehiclesRepository implements IVehiclesRepository {
   }
 
   async list(driver_id?: number): Promise<Vehicle[]> {
-    const vehiclesQuery = await this.repository.createQueryBuilder("v");
+    const vehicles = await this.repository.find({
+      relations: ["driver"],
+      where: {
+        ...(driver_id && { driver_id }),
+      },
+    });
 
-    if (driver_id) {
-      vehiclesQuery.where("driver_id = :driver_id", { driver_id });
-    }
-
-    const vehicles = await vehiclesQuery.getMany();
     return vehicles;
   }
 

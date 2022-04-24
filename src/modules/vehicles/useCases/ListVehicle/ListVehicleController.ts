@@ -10,7 +10,12 @@ class ListVehicleController {
 
     const vehicles = await listVehicleUseCase.execute(Number(driver_id));
 
-    return response.json(vehicles);
+    const treatVehicles = vehicles.map((vehicle) => ({
+      ...vehicle,
+      driver: `${vehicle.driver.first_name} ${vehicle.driver.last_name}`,
+    }));
+
+    return response.json(treatVehicles);
   }
 }
 

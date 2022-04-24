@@ -38,7 +38,9 @@ class DriversRepository implements IDriversRepository {
   }
 
   async list(): Promise<Driver[]> {
-    const drivers = await this.repository.find();
+    const drivers = await this.repository.find({
+      relations: ["company"],
+    });
 
     return drivers;
   }

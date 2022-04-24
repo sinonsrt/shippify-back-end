@@ -7,9 +7,14 @@ class ListDriversController {
   async handle(request: Request, response: Response): Promise<Response> {
     const listDriversUseCase = container.resolve(ListDriversUseCase);
 
-    const driver = await listDriversUseCase.execute();
+    const drivers = await listDriversUseCase.execute();
 
-    return response.status(200).json(driver);
+    const treatDrivers = drivers.map((driver) => ({
+      ...driver,
+      company: driver.company.name,
+    }));
+
+    return response.status(200).json(treatDrivers);
   }
 }
 

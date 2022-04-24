@@ -4,7 +4,7 @@ import {
   CreateDateColumn,
   Entity,
   JoinColumn,
-  OneToOne,
+  ManyToOne,
   PrimaryColumn,
   PrimaryGeneratedColumn,
 } from "typeorm";
@@ -15,9 +15,12 @@ class Driver {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @OneToOne(() => Company)
-  @JoinColumn({ name: "company_id", referencedColumnName: "id" })
+  @Column({ select: false })
   company_id: number;
+
+  @ManyToOne(() => Company, (company) => company.name)
+  @JoinColumn({ name: "company_id", referencedColumnName: "id" })
+  company: Company;
 
   @Column()
   city: string;
