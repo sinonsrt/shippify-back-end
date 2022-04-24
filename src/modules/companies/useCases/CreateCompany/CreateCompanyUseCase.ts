@@ -23,8 +23,7 @@ class CreateCompanyUseCase {
     const companyAlreadyExists = companies.find(
       (company) => company.name === name
     );
-    console.log(companies.length);
-    console.log(companyAlreadyExists);
+
     if (companyAlreadyExists) {
       throw new AppError("Company already exists");
     }
