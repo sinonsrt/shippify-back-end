@@ -1,6 +1,7 @@
 import "reflect-metadata";
 import "./shared/container";
 
+import cors from "cors";
 import express from "express";
 import { router } from "routes";
 
@@ -10,6 +11,7 @@ const app = express();
 
 createConnection();
 
+app.use(cors());
 app.use(express.json());
 app.use(router);
 
