@@ -5,9 +5,9 @@ import { ListVehicleUseCase } from "./ListVehicleUseCase";
 
 class ListVehicleController {
   async handle(request: Request, response: Response): Promise<Response> {
-    const { driver_id } = request.params;
-    const listVehicleUseCase = container.resolve(ListVehicleUseCase);
+    const { driver_id } = request.query;
 
+    const listVehicleUseCase = container.resolve(ListVehicleUseCase);
     const vehicles = await listVehicleUseCase.execute(Number(driver_id));
 
     const treatVehicles = vehicles.map((vehicle) => ({
