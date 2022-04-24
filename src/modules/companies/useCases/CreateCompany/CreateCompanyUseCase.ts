@@ -1,3 +1,4 @@
+import { AppError } from "shared/errors/AppError";
 import { inject, injectable } from "tsyringe";
 
 import { ICompanyDTO } from "../../dto";
@@ -17,6 +18,17 @@ class CreateCompanyUseCase {
     status,
     plan_type,
   }: ICompanyDTO): Promise<Company> {
+    const companies = await this.companiesRepository.list();
+
+    const companyAlreadyExists = companies.find(
+      (company) => company.name === name
+    );
+    console.log(companies.length);
+    console.log(companyAlreadyExists);
+    if (companyAlreadyExists) {
+      throw new AppError("Company already exists");
+    }
+
     const company = await this.companiesRepository.create({
       name,
       city,
