@@ -36,6 +36,11 @@ class VehiclesRepositoryInMemory implements IVehiclesRepository {
     return this.vehicles;
   }
 
+  async findById(id: number): Promise<Vehicle> {
+    const vehicle = this.vehicles.find((v) => v.id === id);
+    return vehicle;
+  }
+
   async update({
     id,
     driver_id,

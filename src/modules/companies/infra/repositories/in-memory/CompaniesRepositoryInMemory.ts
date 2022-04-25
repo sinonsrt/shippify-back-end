@@ -20,7 +20,7 @@ class CompaniesRepositoryInMemory implements ICompaniesRepository {
     const company = new Company();
 
     Object.assign(company, {
-      id: randomInt(10),
+      id: randomInt(100),
       name,
       city,
       status,

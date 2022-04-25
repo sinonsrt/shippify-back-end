@@ -41,6 +41,15 @@ class VehiclesRepository implements IVehiclesRepository {
     return vehicles;
   }
 
+  async findById(id: number): Promise<Vehicle> {
+    const vehicle = await this.repository.findOne({
+      where: { id },
+      relations: ["driver"],
+    });
+
+    return vehicle;
+  }
+
   async update({
     id,
     driver_id,
