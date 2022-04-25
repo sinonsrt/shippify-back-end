@@ -5,8 +5,11 @@
   "username": "root",
   "password": "admin",
   "database": "shippify",
-  "migrations": ["./src/database/migrations/*.ts", "./build/src/entity/*.js"],
-  "entities": ["./src/modules/**/entities/*.ts"],
+  "migrations": ["./src/database/migrations/*.ts"],
+  "entities": [
+    "./src/modules/**/infra/entities/*{.ts,.js}",
+    "./build/src/entity/*.js"
+  ],
   "cli": {
     "migrationsDir": "./src/database/migrations"
   }
